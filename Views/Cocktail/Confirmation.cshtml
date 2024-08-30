@@ -1,0 +1,9 @@
+@model Order
+<h2>Order Confirmation</h2>
+
+<p>Thank you for your order!</p>
+<p>Order ID: @Model.ID</p>
+<p>Cocktail: @Model.CocktailName</p>
+<p>Status: @Model.Status</p>
+
+<a asp-action="ShowMenu">Back to Menu</a>

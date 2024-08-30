@@ -1,0 +1,63 @@
+Online Bartender Application
+
+Overview
+
+This ASP.NET Core application implements an online bartender system using the MVC (Model-View-Controller) pattern. The application allows bar patrons to view a cocktail menu, place orders, and enables bartenders to view the order queue.
+
+Cocktail Menu: Patrons can view the list of available cocktails.
+Order Placement: Patrons can place orders for cocktails.
+Order Queue: Bartenders can view and manage the list of cocktail orders.
+Installation
+
+Open your browser and navigate to http://localhost:5000.
+
+Index Page:
+Access the index page where patrons can view the cocktail menu and bartenders can access the order queue.
+View Cocktail Menu:
+Click on the menu option to view available cocktails.
+Place an Order:
+Select a cocktail from the menu and submit your order.
+View Order Queue:
+Bartenders can access the order queue to see pending orders.
+Project Structure
+
+Controllers: Manages user interactions and coordinates between models and views.
+Models: Represents the data and business logic.
+Views: Defines how data is displayed to users.
+Endpoints
+
+GET /: Displays the index page.
+GET /menu: Displays the cocktail menu.
+POST /order: Submits a new cocktail order.
+GET /orders: Displays the order queue.
+Models
+
+Cocktail: Represents a cocktail with attributes like ID, Name, Ingredients, and Price.
+Order: Represents an order with attributes like ID, CocktailID, CustomerName, CustomerEmail, and Status.
+
+Views
+
+Menu View (Views/Cocktail/Menu.cshtml): Displays the list of cocktails.
+Order Confirmation View (Views/Cocktail/Confirmation.cshtml): Shows confirmation after placing an order.
+Order Queue View (Views/Cocktail/OrderQueue.cshtml): Displays the list of orders.
+Controllers
+
+CocktailController: Handles requests related to the cocktail menu and orders.
+Index: Displays the homepage.
+ShowMenu: Displays the cocktail menu.
+PlaceOrder: Processes a new order.
+ViewOrderQueue: Displays the order queue.
+Database Schema
+
+Cocktails Table:
+ID: INT, Primary Key
+Name: NVARCHAR
+Ingredients: NVARCHAR
+Price: DECIMAL
+Orders Table:
+ID: INT, Primary Key
+CocktailID: INT, Foreign Key
+CustomerName: NVARCHAR
+CustomerEmail: NVARCHAR
+Status: NVARCHAR (e.g., 'Pending')
+Contributing

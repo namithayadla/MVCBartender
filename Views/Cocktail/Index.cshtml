@@ -1,0 +1,10 @@
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Welcome to the Online Bartender</h1>
+<p>Choose an option:</p>
+<ul>
+    <li><a asp-controller="Cocktail" asp-action="ShowMenu">View Cocktail Menu</a></li>
+    <li><a asp-controller="Cocktail" asp-action="OrderQueue">View Order Queue (Bartenders Only)</a></li>
+</ul>

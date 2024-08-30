@@ -1,0 +1,31 @@
+
+@model List<Cocktail>
+    <h2>Cocktail Menu</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Ingredients</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cocktail in Model) 
+            {
+                <tr>
+                    <td>@cocktail.Name</td>
+                    <td>@cocktail.Ingredients</td>
+                    <td>@cocktail.Price.ToString("C")</td>
+                    <td>
+                        <form asp-action="PlaceOrder" method="post">
+                            <input type="hidden" name="cocktailId" value="@cocktail.ID"/>
+                            <input type="text" name="cocktailName" placeholder="Your Name" required/>
+                            <input type="email" name="cocktailEmail" placeholder="Your Email" required/>
+                            <button type="submit">Order</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
